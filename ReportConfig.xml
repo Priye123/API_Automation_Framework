@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<extentreports>
+	<configuration>
+
+		<!-- title of the document -->
+		<documentTitle>RCBTeamValidation</documentTitle>
+		<!-- document encoding -->
+		<!-- defaults to UTF-8 -->
+		<encoding>UTF-8</encoding>
+
+		<!-- protocol for script and stylesheets -->
+		<!-- defaults to https -->
+		<protocol>https</protocol>
+
+		<!-- TestVagrant Technologies logo -->
+		<reportName>
+			<![CDATA[
+                <img src='https://media-exp1.licdn.com/dms/image/C4E0BAQHbAbSCBOYGIQ/company-logo_200_200/0/1520937439451?e=2159024400&v=beta&t=BDZxgYSM2UtT46BK1Oglh0WEGC6dT3-iJdK0f8dB4Rs'
+                style="position:absolute;bottom:93.7%;left:78%;margin:auto;height:45px;width:45px;object-fit:contain;"/>
+            ]]>
+		</reportName>
+
+		<!-- custom javascript -->
+		<scripts>
+			<![CDATA[
+                $(document).ready(function() {
+                    
+                });
+            ]]>
+		</scripts>
+	</configuration>
+</extentreports>

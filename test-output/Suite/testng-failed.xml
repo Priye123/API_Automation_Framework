@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test name="Player Validation Automation Suite - Team RCB(failed)">
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.APITestCases.TeamRCB.RCBGetTestCases">
+        <methods>
+          <include name="api_01_getDataofTeamRCB"/>
+        </methods>
+      </class> <!-- com.APITestCases.TeamRCB.RCBGetTestCases -->
+    </classes>
+  </test> <!-- Player Validation Automation Suite - Team RCB(failed) -->
+</suite> <!-- Failed suite [Suite] -->
