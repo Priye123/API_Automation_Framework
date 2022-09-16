@@ -41,6 +41,13 @@ Eclipse,Java,TestNG,Maven,Log4J,ExtentReports,SMTP Mail,GIT
 
 ![image](https://user-images.githubusercontent.com/46869321/190625297-7883a865-258b-4da9-bc72-7837cd05b213.png)
 
+## <a id="contribute"></a>Code of conduct
+
+*   Nomenclature : Camel case
+*   No hard coding of data
+*   Well documented code
+*   No sysouts/print statements in the code
+*   Code must look clean. No unnecessary commented / uncommented code
 
 ## <a id="license"></a>Conclusion
 
