@@ -1,6 +1,5 @@
 package com.APITestCases.TeamRCB;
 
-import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.TeamRCB.Reports.*;
@@ -9,21 +8,23 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class RCBGetTestCases extends BaseClass {
 
+	private static final LibraryRCB PROPERTIES = LibraryRCB.getInstance();
+
 	@Test(enabled = true, groups = "Regression", description = "To validate the RCB team has only 4 foreign players")
 	public void api_01_validateForeignPlayersCount() throws Exception {
 		int testNumber = 1;
-		String testIdentifier = "TeamRCB";
-		ApiRequestHelper apiHelper = ApiRequestHelper.getInstance();
-		ExtentTestManager.getTest().log(LogStatus.INFO, "TC" + testNumber + "_" + testIdentifier);
+		String testIdentifier = "ValidateForeignPlayersCount";
+		ExtentTestManager.getTest().log(LogStatus.INFO, "TC " + testNumber + "_" + testIdentifier);
 
 		// Fetch JSON file from specified file location
-		JSONObject requestBody = apiHelper.getBodyFromJsonFile(testIdentifier, TestPropertyLoader.REQUEST_BODY);
+		String baseURI = PropertiesOperations.getPropertyValueByKey("baseURI");
+		String endPoint = PropertiesOperations.getPropertyValueByKey("endPoint");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO,
-				" <html><b><font color=\"red\">TeamRCB.json</font></b></html> :" + requestBody);
+		ExtentTestManager.getTest().log(LogStatus.INFO, " <html><b><font color=\"red\">TeamRCB.json</font></b></html> :"
+				+ LibraryRCB.getResponse(baseURI, endPoint).asPrettyString());
 
 		// return count of ForeignPlayers
-		int noOfForeignPlayers = LibraryRCB.validateForeignPlayersFromJSON(requestBody);
+		int noOfForeignPlayers = PROPERTIES.validateForeignPlayersFromJSON(baseURI, endPoint);
 
 		// asserting if count is 4, otherwise throw custom exception(more than 4 are not allowed)
 		try {
@@ -44,19 +45,18 @@ public class RCBGetTestCases extends BaseClass {
 	@Test(enabled = true, groups = "Regression", description = "To validate the team has at least 1 wicket keeper")
 	public void api_02_validateWicketKeepersCount() throws Exception {
 		int testNumber = 2;
-		String testIdentifier = "TeamRCB";
-
-		ApiRequestHelper apiHelper = ApiRequestHelper.getInstance();
-		ExtentTestManager.getTest().log(LogStatus.INFO, "TC" + testNumber + "_" + testIdentifier);
+		String testIdentifier = "ValidateWicketKeepersCount";
+		ExtentTestManager.getTest().log(LogStatus.INFO, "TC " + testNumber + "_" + testIdentifier);
 
 		// Fetching JSON file from specified file location
-		JSONObject requestBody = apiHelper.getBodyFromJsonFile(testIdentifier, TestPropertyLoader.REQUEST_BODY);
+		String baseURI = PropertiesOperations.getPropertyValueByKey("baseURI");
+		String endPoint = PropertiesOperations.getPropertyValueByKey("endPoint");
 
-		ExtentTestManager.getTest().log(LogStatus.INFO,
-				" <html><b><font color=\"red\">TeamRCB.json</font></b></html> :" + requestBody);
+		ExtentTestManager.getTest().log(LogStatus.INFO, " <html><b><font color=\"red\">TeamRCB.json</font></b></html> :"
+				+ LibraryRCB.getResponse(baseURI, endPoint).asPrettyString());
 
 		// return count of WicketKeepers
-		int noOfWicketKeepers = LibraryRCB.validateWicketKeeperFromJSON(requestBody);
+		int noOfWicketKeepers = PROPERTIES.validateWicketKeeperFromJSON(baseURI, endPoint);
 
 		// asserting if count is less than 1, otherwise throw custom exception(less than 1 is not allowed)
 		try {

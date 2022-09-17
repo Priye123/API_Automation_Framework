@@ -3,8 +3,6 @@ package com.TeamRCB.Reports;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-//import com.Email365.utils.TestPropertyLoader;
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentManager {

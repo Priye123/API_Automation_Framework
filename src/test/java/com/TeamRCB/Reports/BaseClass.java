@@ -42,7 +42,7 @@ public class BaseClass {
 	public static String getExceptionInfo(ITestResult result) {
 		StringBuffer sb = new StringBuffer(500);
 		sb.append(result.getThrowable().getClass().getName());
-		System.out.println(sb.toString());
+		//System.out.println(sb.toString());
 		return sb.toString();
 	}
 
@@ -75,7 +75,7 @@ public class BaseClass {
 		try {
 			Thread.sleep(5000);
 		} catch (Exception e) {
-			System.out.println(e);
+			//System.out.println(e);
 		}
 	}
 

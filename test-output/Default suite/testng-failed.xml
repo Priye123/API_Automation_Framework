@@ -5,7 +5,10 @@
     <classes>
       <class name="com.APITestCases.TeamRCB.RCBGetTestCases">
         <methods>
-          <include name="api_01_getDataofTeamRCB"/>
+          <include name="endSetup"/>
+          <include name="api_01_validateForeignPlayersCount"/>
+          <include name="beforeStart"/>
+          <include name="afterTest"/>
         </methods>
       </class> <!-- com.APITestCases.TeamRCB.RCBGetTestCases -->
     </classes>
